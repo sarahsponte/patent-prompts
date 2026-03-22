@@ -88,6 +88,59 @@ All prompts use `{{PLACEHOLDER}}` format for user inputs. Each prompt's document
 
 Some prompts (marked with 🌐) work best when the LLM can search the internet — for example, to find prior art references or gather technical details about an accused product. If your LLM has built-in web search, it can search directly. Otherwise, paste your own search results into the `{{WEB_SEARCH_RESULTS}}` placeholder. Each prompt's documentation explains what to search for.
 
+## Install as an AI Agent Skill
+
+These prompts are available as installable skills for AI coding agents. Once installed, you can invoke them directly from your agent (e.g., `/patent-prompts:claims-drafting`).
+
+### Claude Code
+
+Install as a plugin:
+
+```bash
+/plugin install patent-prompts@arcprime-ip/patent-prompts
+```
+
+Or add manually to a project:
+
+```bash
+git clone https://github.com/arcprime-ip/patent-prompts.git
+claude --plugin-dir ./patent-prompts
+```
+
+After installation, all prompts are available as slash commands:
+
+| Skill | Command |
+|---|---|
+| Claims Drafting | `/patent-prompts:claims-drafting` |
+| Detectability Assessment | `/patent-prompts:detectability-assessment` |
+| Disclosure Questions | `/patent-prompts:disclosure-questions` |
+| Draft Review (101 + 112) | `/patent-prompts:draft-review` |
+| Draft Review (101 only) | `/patent-prompts:draft-review-101` |
+| Draft Review (112 only) | `/patent-prompts:draft-review-112` |
+| Prior Art Analysis | `/patent-prompts:prior-art-analysis` |
+| Patent Summarization | `/patent-prompts:patent-summarization` |
+| Concept Extraction | `/patent-prompts:concept-extraction` |
+| Continuation - Targeted | `/patent-prompts:continuation-targeted` |
+| Continuation - Broadened | `/patent-prompts:continuation-broadened` |
+| Continuation - Unclaimed | `/patent-prompts:continuation-unclaimed` |
+| Claim Chart | `/patent-prompts:claim-chart` |
+| Patent Categorization | `/patent-prompts:categorization` |
+| Pruning Analysis | `/patent-prompts:pruning-analysis` |
+
+### OpenAI Codex CLI
+
+Codex automatically reads the `AGENTS.md` file in this repository. Clone the repo into your project or working directory:
+
+```bash
+git clone https://github.com/arcprime-ip/patent-prompts.git
+```
+
+Then reference the prompts in your Codex sessions — Codex will use the `AGENTS.md` instructions to locate and apply the relevant prompt files.
+
+### Other Agents (Cursor, Gemini CLI, etc.)
+
+The `SKILL.md` format is an open standard supported by multiple agents. Clone the repo and point your agent at the `skills/` directory, or copy individual `SKILL.md` files into your agent's skills directory.
+
 ## Jurisdiction
 
 These prompts are written for **US patent practice** (USPTO procedures, 35 U.S.C. references, MPEP conventions). Many of the underlying concepts transfer to other jurisdictions, but the specific legal frameworks, claim drafting conventions, and procedural references are US-centric.
