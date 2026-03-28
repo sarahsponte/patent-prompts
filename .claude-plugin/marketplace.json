@@ -9,10 +9,10 @@
   },
   "plugins": [
     {
-      "name": "patent-prompts",
+      "name": "patent-workflow",
       "description": "Professional patent workflow prompts for claims drafting, prosecution, prior art analysis, claim charting, continuation strategy, and portfolio management. Built by a patent attorney for real-world patent work.",
       "category": "productivity",
-      "source": "./plugins/patent-prompts",
+      "source": "./plugins/patent-workflow",
       "homepage": "https://github.com/arcprime-ip/patent-prompts"
     }
   ]
